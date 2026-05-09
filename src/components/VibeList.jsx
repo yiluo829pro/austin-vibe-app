@@ -17,7 +17,10 @@ function computeScore(place, votes) {
 
 export function VibeList({ slug, onBack }) {
   const category = categories.find(c => c.slug === slug)
-  const seedPlaces = allPlaces[slug] || []
+  const seedPlaces = [
+    ...(allPlaces[slug] || []),
+    ...(allPlaces[`${slug}_extra`] || []),
+  ]
   const { votes, castVote } = useVotes(slug)
   const { nominations, addNomination } = useNominations(slug)
   const [expanded, setExpanded] = useState(false)
