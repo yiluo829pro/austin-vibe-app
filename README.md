@@ -6,6 +6,14 @@ Community-ranked vibe spots for Austin locals. Find where to go for any moment �
 
 ---
 
+## Screenshots
+
+| Home — Vibe Grid | Speakeasy Hunt | Whiskey & Bourbon |
+|:---:|:---:|:---:|
+| ![Home screen showing the vibe category grid](screenshots/home.png) | ![Speakeasy Hunt ranked list with voting](screenshots/speakeasy.png) | ![Whiskey & Bourbon ranked list](screenshots/whiskey.png) |
+
+---
+
 ## What It Is
 
 Austin Vibe is a share-first place discovery app for Austin locals. Instead of searching by category (restaurants, bars), users browse by **moment** — bachelorette, boys night, speakeasy hunt, first date, late night eats — and get a community-ranked list they can vote on and share instantly into a group chat.
