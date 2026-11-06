@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Vibe App Mockups</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Radio+Canada+Big:wght@500;600;700&family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#09090B;color:#FFFBEB;font-family:Geist,system-ui,sans-serif}
+.bar{position:sticky;top:0;z-index:50;height:56px;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:0 20px;border-bottom:1px solid #27272A;background:#09090B}
+.xbrand{font:700 18px "Radio Canada Big",sans-serif}
+.xbrand i{color:#FFBA00;font-style:normal}
+.tabs{display:flex;background:#18181B;border:1px solid #27272A;border-radius:999px;padding:4px}
+.tabs button{font:600 13px Geist,sans-serif;color:#A1A1AA;background:none;border:0;border-radius:999px;padding:8px 16px;cursor:pointer;white-space:nowrap}
+.tabs button.on{background:#FFBA00;color:#09090B}
+.tabpane{display:none;min-height:calc(100vh - 56px)}
+.tabpane.on{display:block}
+@media(max-width:560px){.bar{padding:0 12px}.tabs button{padding:8px 11px}}
+#tabA{--bg:#09090B;--panel:#18181B;--line:#27272A;--cream:#FFFBEB;--muted:#A1A1AA;--amber:#FFBA00;--amber-soft:rgba(255,186,0,.12)}
+#tabA *{box-sizing:border-box;margin:0;padding:0}
+#tabA{background:var(--bg);color:var(--cream);font-family:Geist,system-ui,sans-serif;line-height:1.5}
+#tabA h1,#tabA h2,#tabA h3{font-family:"Radio Canada Big",sans-serif;font-weight:600}
+#tabA .wrap{max-width:1180px;margin:0 auto;padding:32px 24px 48px;display:grid;grid-template-columns:minmax(0,1fr) 400px;gap:40px;align-items:start}
+#tabA .tag{display:inline-block;font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px;margin-bottom:14px}
+#tabA h1{font-size:32px;line-height:1.15;margin-bottom:8px}
+#tabA .lede{color:var(--muted);margin-bottom:28px;max-width:56ch}
+#tabA .step{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin-bottom:14px}
+#tabA .step .k{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--amber);font-weight:600;margin-bottom:6px}
+#tabA .step h2{font-size:19px;margin-bottom:6px}
+#tabA .step p{color:#D4D4D8;font-size:15px}
+#tabA .step ul{list-style:none;margin-top:10px;display:grid;gap:6px}
+#tabA .step li{font-size:14.5px;color:#D4D4D8;padding-left:16px;position:relative}
+#tabA .step li:before{content:"";position:absolute;left:0;top:9px;width:6px;height:6px;border-radius:50%;background:var(--amber)}
+#tabA .moments{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-top:12px}
+#tabA .mcard{border:1px solid var(--line);border-radius:10px;padding:10px 12px;cursor:pointer;background:transparent;color:inherit;text-align:left;font:inherit}
+#tabA .mcard b{display:block;font-size:14px}
+#tabA .mcard span{font-size:13px;color:var(--muted)}
+#tabA .mcard.on{border-color:var(--amber);background:var(--amber-soft)}
+#tabA .metric{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+#tabA .metric span{font-size:13px;border:1px solid var(--line);border-radius:8px;padding:4px 9px;color:#D4D4D8}
+#tabA .metric span.p{border-color:var(--amber);color:var(--amber)}
+#tabA .right{position:sticky;top:24px}
+#tabA .ctl{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}
+#tabA .ctl button{flex:1 1 auto;min-width:0;font:500 13px Geist,sans-serif;color:var(--muted);background:var(--panel);border:1px solid var(--line);border-radius:999px;padding:7px 8px;cursor:pointer;white-space:nowrap}
+#tabA .ctl button.on{color:#09090B;background:var(--amber);border-color:var(--amber)}
+#tabA .ctl .map{flex:0 0 auto}
+#tabA .phone{width:100%;max-width:380px;margin:0 auto;height:740px;border-radius:44px;border:10px solid #000;outline:1px solid #3F3F46;background:#0C0C0E;overflow:hidden;display:flex;flex-direction:column}
+#tabA .status{display:flex;justify-content:space-between;padding:12px 22px 6px;font-size:13px;font-weight:600}
+#tabA .screen{flex:1;overflow-y:auto;padding:6px 16px 16px;scrollbar-width:none}
+#tabA .screen::-webkit-scrollbar{display:none}
+#tabA .top{display:flex;justify-content:space-between;align-items:center;margin:4px 0 14px}
+#tabA .logo{font-family:"Radio Canada Big",sans-serif;font-weight:700;font-size:20px}
+#tabA .logo i{color:var(--amber);font-style:normal}
+#tabA .bal{font-size:12px;background:var(--panel);border:1px solid var(--line);padding:4px 10px;border-radius:999px}
+#tabA .bal b{color:var(--amber)}
+#tabA .greet{font-size:13px;color:var(--muted)}
+#tabA .headline{font-family:"Radio Canada Big",sans-serif;font-size:24px;line-height:1.15;margin:2px 0 4px}
+#tabA .why{font-size:12px;color:var(--muted);margin-bottom:14px}
+#tabA .why b{color:var(--amber);font-weight:500}
+#tabA .hero{border-radius:16px;overflow:hidden;background:var(--panel);border:1px solid var(--line);margin-bottom:16px;cursor:pointer}
+#tabA .hero .img{height:140px;display:flex;align-items:flex-end;padding:12px;font-size:12px}
+#tabA .hero .img span{background:rgba(0,0,0,.55);padding:3px 8px;border-radius:999px}
+#tabA .hero .body{padding:12px 14px}
+#tabA .hero h3{font-size:18px}
+#tabA .meta{font-size:12.5px;color:var(--muted)}
+#tabA .meta b{color:var(--cream);font-weight:500}
+#tabA .sec{display:flex;justify-content:space-between;align-items:baseline;margin:6px 0 8px}
+#tabA .sec h3{font-size:15px}
+#tabA .sec a{font-size:12px;color:var(--amber)}
+#tabA .row{display:flex;gap:10px;overflow-x:auto;scrollbar-width:none;margin-bottom:16px}
+#tabA .row::-webkit-scrollbar{display:none}
+#tabA .card{flex:0 0 136px;background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;cursor:pointer}
+#tabA .card .img{height:84px}
+#tabA .card .b{padding:8px 10px}
+#tabA .card b{display:block;font-size:13.5px;line-height:1.25}
+#tabA .card .meta{font-size:11.5px}
+#tabA .pill{display:inline-block;font-size:10.5px;color:#09090B;background:var(--amber);border-radius:6px;padding:1px 6px;margin-top:4px;font-weight:600}
+#tabA .maplink{display:flex;align-items:center;justify-content:center;gap:6px;border:1px dashed #3F3F46;border-radius:12px;padding:10px;font-size:13px;color:var(--muted);cursor:pointer}
+#tabA .nav{display:flex;justify-content:space-around;border-top:1px solid var(--line);padding:10px 0 16px;font-size:11px;color:var(--muted)}
+#tabA .nav .on{color:var(--amber)}
+#tabA .mapview{position:relative;height:100%;border-radius:14px;overflow:hidden;background:#141416}
+#tabA .mapview svg{position:absolute;inset:0;width:100%;height:100%}
+#tabA .mapsearch{position:absolute;top:10px;left:10px;right:10px;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:9px 12px;font-size:13px;color:var(--muted)}
+#tabA .timer{position:absolute;bottom:12px;left:12px;right:12px;background:rgba(24,24,27,.95);border:1px solid #3F3F46;border-radius:12px;padding:10px 12px;font-size:12.5px;color:#D4D4D8}
+#tabA .timer b{color:var(--amber)}
+#tabA .notif{max-width:380px;margin:16px auto 0;border-radius:24px;padding:16px;background:linear-gradient(160deg,#1F1B2E,#2A1F14);border:1px solid #3F3F46}
+#tabA .notif .lbl{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);margin-bottom:10px}
+#tabA .notif .lbl b{color:var(--amber);font-weight:600;letter-spacing:.06em;text-transform:uppercase}
+#tabA .push{display:flex;gap:10px;background:rgba(39,39,42,.85);backdrop-filter:blur(8px);border-radius:16px;padding:11px 12px;cursor:pointer}
+#tabA .push .ic{flex:0 0 34px;height:34px;border-radius:9px;background:var(--amber);color:#09090B;font:700 15px "Radio Canada Big",sans-serif;display:flex;align-items:center;justify-content:center}
+#tabA .push .tx{flex:1;min-width:0}
+#tabA .push .hd{display:flex;justify-content:space-between;font-size:12px;color:var(--muted)}
+#tabA .push .t{font-size:14px;font-weight:600;margin-top:1px}
+#tabA .push .bd{font-size:13.5px;color:#D4D4D8;line-height:1.35}
+#tabA .notif .why2{font-size:12.5px;color:var(--muted);margin-top:10px;line-height:1.45}
+#tabA .notif .why2 b{color:var(--cream);font-weight:500}
+#tabA .img{position:relative}
+#tabA .heart{position:absolute;top:8px;right:8px;width:30px;height:30px;border-radius:50%;border:0;background:rgba(9,9,11,.55);display:flex;align-items:center;justify-content:center;cursor:pointer;padding:0}
+#tabA .heart svg{width:16px;height:16px;fill:none;stroke:#FFFBEB;stroke-width:2}
+#tabA .heart.on svg{fill:#FFBA00;stroke:#FFBA00}
+#tabA .card .heart{width:26px;height:26px;top:6px;right:6px}
+#tabA .card .heart svg{width:14px;height:14px}
+#tabA .note{font-size:12px;color:var(--muted);text-align:center;margin-top:12px}
+#tabA .toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:var(--cream);color:#09090B;font-size:13.5px;padding:9px 14px;border-radius:10px;opacity:0;transition:opacity .2s;pointer-events:none;max-width:calc(100% - 32px)}
+#tabA .toast.show{opacity:1}
+@media (max-width:900px){#tabA .wrap{grid-template-columns:minmax(0,1fr);padding:24px 16px}
+#tabA .right{position:static}}
+#tabB{--bg:#09090B;--panel:#18181B;--panel2:#27272A;--line:#3F3F46;--cream:#FFFBEB;--text:#F4F4F5;--muted:#A1A1AA;--dim:#71717B;--amber:#FFBA00;--green:#4ADE80;--red:#F87171;--head:"Radio Canada Big",system-ui,sans-serif;--body:"Geist",system-ui,sans-serif}
+#tabB *{box-sizing:border-box;margin:0;padding:0}
+#tabB{background:var(--bg);color:var(--text);font-family:var(--body);min-height:100vh}
+#tabB button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+#tabB h1,#tabB h2,#tabB h3,#tabB h4{font-family:var(--head);color:var(--cream)}
+#tabB .topbar{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;padding:16px 24px;border-bottom:1px solid var(--panel2)}
+#tabB .brand{font-family:var(--head);font-weight:700;font-size:18px;color:var(--cream)}
+#tabB .brand small{display:block;font-family:var(--body);font-weight:400;font-size:12px;color:var(--muted);margin-top:2px}
+#tabB .seg{display:flex;background:var(--panel);border:1px solid var(--panel2);border-radius:999px;padding:4px;flex-wrap:wrap}
+#tabB .seg button{padding:8px 16px;border-radius:999px;font-size:13px;font-weight:600;color:var(--muted)}
+#tabB .seg button.on{background:var(--amber);color:#111}
+#tabB .wrap{max-width:1200px;margin:0 auto;padding:28px 24px 60px}
+#tabB .grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,360px);gap:32px;align-items:start}
+#tabB .side{position:sticky;top:20px}
+#tabB .side .phone{position:relative;top:0}
+@media(max-width:920px){#tabB .grid{grid-template-columns:minmax(0,1fr)}
+#tabB .card{overflow-x:auto}
+#tabB .side{position:static}
+#tabB .wrap{padding:20px 16px 48px}}
+#tabB .phone{width:100%;max-width:360px;margin:0 auto;height:720px;border-radius:42px;border:10px solid #000;background:var(--bg);outline:1px solid var(--panel2);overflow:hidden;position:relative;box-shadow:0 30px 80px rgba(0,0,0,.6);position:sticky;top:20px}
+#tabB .scr{position:absolute;inset:0;overflow-y:auto;padding:14px 18px 28px}
+#tabB .scr::-webkit-scrollbar{display:none}
+#tabB .status{display:flex;justify-content:space-between;font-size:12px;font-weight:600;margin-bottom:12px}
+#tabB .kicker{font-size:11px;font-weight:700;letter-spacing:.1em;color:var(--amber)}
+#tabB .ph1{font-size:25px;font-weight:600;margin-top:6px;line-height:1.15}
+#tabB .psub{font-size:13px;color:var(--muted);margin-top:6px;line-height:1.5}
+#tabB .plan{display:block;width:100%;text-align:left;margin-top:12px;border:1px solid var(--line);border-radius:18px;padding:14px;background:var(--panel)}
+#tabB .plan.on{border-color:var(--amber);background:rgba(255,186,0,.08)}
+#tabB .row1{display:flex;justify-content:space-between;align-items:baseline}
+#tabB .plan b{font-family:var(--head);font-size:17px;color:var(--cream)}
+#tabB .price{font-family:var(--head);font-size:20px;font-weight:700;color:var(--cream)}
+#tabB .price small{font-size:12px;color:var(--muted);font-family:var(--body);font-weight:500}
+#tabB .plan p{font-size:12px;color:var(--muted);margin-top:6px;line-height:1.45}
+#tabB .perks{margin-top:16px;background:var(--cream);color:#18181B;border-radius:18px;padding:14px 16px}
+#tabB .perks h4{color:#18181B;font-size:15px;margin-bottom:6px}
+#tabB .perks li{font-size:12px;color:#3F3F46;margin:4px 0 0 16px;line-height:1.4}
+#tabB .cta{display:block;width:100%;background:var(--amber);color:#111;font-weight:700;font-size:15px;padding:14px;border-radius:999px;margin-top:16px;text-align:center}
+#tabB .fine{font-size:11px;color:var(--dim);margin-top:10px;line-height:1.5}
+#tabB .icons{display:flex;gap:6px;margin-top:10px;flex-wrap:wrap}
+#tabB .icons span{width:30px;height:30px;border-radius:50%;background:rgba(255,186,0,.15);border:1px solid rgba(255,186,0,.4);display:flex;align-items:center;justify-content:center;font-size:14px}
+#tabB .card{background:var(--panel);border:1px solid var(--panel2);border-radius:18px;padding:20px;margin-bottom:16px}
+#tabB .card h2{font-size:22px}
+#tabB .card h3{font-size:17px;margin-bottom:4px}
+#tabB .s{font-size:13px;color:var(--muted);line-height:1.55;margin-top:4px}
+#tabB .summary{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:14px}
+@media(max-width:700px){#tabB .summary{grid-template-columns:1fr}}
+#tabB .sum{border-radius:14px;padding:12px 14px;font-size:12px;line-height:1.5}
+#tabB .sum b{display:block;font-family:var(--head);font-size:14px;margin-bottom:2px}
+#tabB .sum.g{background:rgba(74,222,128,.1);border:1px solid rgba(74,222,128,.35)}
+#tabB .sum.g b{color:var(--green)}
+#tabB .sum.a{background:rgba(255,186,0,.1);border:1px solid rgba(255,186,0,.35)}
+#tabB .sum.a b{color:var(--amber)}
+#tabB .sum.r{background:rgba(248,113,113,.1);border:1px solid rgba(248,113,113,.35)}
+#tabB .sum.r b{color:var(--red)}
+#tabB table{width:100%;border-collapse:collapse;margin-top:14px;font-size:13px}
+#tabB th,#tabB td{text-align:left;padding:12px 10px;border-bottom:1px solid var(--panel2);vertical-align:top}
+#tabB th{font-size:11px;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.06em}
+#tabB td.n{font-family:var(--head);font-size:16px;font-weight:700;white-space:nowrap}
+#tabB .pos{color:var(--green)}
+#tabB .neg{color:var(--red)}
+#tabB .zero{color:var(--muted)}
+#tabB .chip{display:inline-block;font-size:12px;font-weight:700;border-radius:999px;padding:4px 10px;white-space:nowrap}
+#tabB .c-both{background:rgba(74,222,128,.15);color:var(--green)}
+#tabB .c-diner{background:rgba(255,186,0,.15);color:var(--amber)}
+#tabB .c-ink{background:rgba(161,161,170,.15);color:#D4D4D8}
+#tabB .c-none{background:rgba(248,113,113,.15);color:var(--red)}
+#tabB tr.best td{background:rgba(74,222,128,.06)}
+#tabB .calc td{padding-top:0}
+#tabB .calcbox{border-left:3px solid var(--green);padding:10px 12px;font-size:13px;line-height:1.6;color:var(--muted);background:rgba(74,222,128,.05);border-radius:0 10px 10px 0}
+#tabB .calcbox span{display:block;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--green);margin-bottom:4px}
+#tabB .calcbox b{color:var(--cream)}
+#tabB .legend{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px;font-size:12px;color:var(--muted)}
+#tabB .take{margin-top:10px}
+#tabB .take li{font-size:14px;color:var(--muted);line-height:1.6;margin:8px 0 0 20px}
+#tabB .take li b{color:var(--cream)}
+#tabB .rec{background:var(--cream);color:#18181B;border-radius:18px;padding:18px 20px}
+#tabB .rec h3{color:#18181B}
+#tabB .rec p{font-size:14px;line-height:1.6;color:#3F3F46;margin-top:6px}
+#tabB .disclaim{font-size:12px;color:var(--dim);margin-top:8px;line-height:1.5}
+#tabB .tag{display:inline-block;font-size:12px;color:var(--muted);border:1px solid var(--panel2);border-radius:999px;padding:3px 10px;margin-bottom:14px}
+#tabB .ttl{font-size:32px;line-height:1.15;margin-bottom:8px}
+#tabB .lede{color:var(--muted);margin-bottom:24px;max-width:60ch;line-height:1.5}
+#tabB .step{background:var(--panel);border:1px solid var(--panel2);border-radius:14px;padding:18px 20px;margin-bottom:14px}
+#tabB .step .k{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--amber);font-weight:600;margin-bottom:6px}
+#tabB .step h2{font-size:19px;margin-bottom:6px}
+#tabB .step p{color:#D4D4D8;font-size:15px;line-height:1.5}
+#tabB .step ul{list-style:none;margin-top:10px;display:grid;gap:7px}
+#tabB .step li{font-size:14.5px;color:#D4D4D8;padding-left:16px;position:relative;line-height:1.5}
+#tabB .step li:before{content:"";position:absolute;left:0;top:9px;width:6px;height:6px;border-radius:50%;background:var(--amber)}
+#tabB .step li b{color:var(--cream)}
+#tabB .pgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:12px}
+#tabB .pc{border:1px solid var(--panel2);border-radius:10px;padding:10px 12px}
+#tabB .pc b{display:block;font-size:14px;color:var(--cream)}
+#tabB .pc span{font-size:13px;color:var(--muted);line-height:1.45;display:block}
+#tabB .pc em{font-style:normal;color:var(--amber);font-size:13px;font-weight:600;display:block;margin-top:4px}
+#tabB .grp{font-size:15px;margin:16px 0 0}
+#tabB .grp span{font-family:var(--body);font-weight:400;font-size:13px;color:var(--muted);margin-left:6px}
+#tabB .pgrid.g3{grid-template-columns:repeat(3,minmax(0,1fr))}
+#tabB .pgrid.g1{grid-template-columns:1fr}
+#tabB .metric{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+#tabB .metric span{font-size:13px;border:1px solid var(--panel2);border-radius:8px;padding:4px 9px;color:#D4D4D8}
+#tabB .metric span.p{border-color:var(--amber);color:var(--amber)}
+#tabB .divider{display:flex;align-items:center;gap:10px;margin:28px 0 14px;color:var(--muted);font-size:12px;letter-spacing:.08em;text-transform:uppercase;font-weight:600}
+#tabB .divider:after{content:"";flex:1;height:1px;background:var(--panel2)}
+@media(max-width:700px){#tabB .pgrid,#tabB .pgrid.g3{grid-template-columns:1fr}}
+#tabA .stage{max-width:420px;margin:0 auto;padding:24px 16px 48px}
+#tabA .ctl{max-width:380px;margin:0 auto 12px}
+#tabB .stage{max-width:420px;margin:0 auto;padding:24px 16px 48px}
+#tabB .seg{justify-content:center;margin:0 auto 14px;width:max-content;max-width:100%}
+#tabB .phone{position:relative;top:0}
+</style>
+</head>
+<body>
+<div class="bar"><div class="xbrand">vibe<i>.</i></div>
+<div class="tabs"><button data-t="tabA" class="on">Home</button><button data-t="tabB">Membership</button></div></div>
+<div id="tabA" class="tabpane on"><div class="stage">
+  <div class="ctl" id="ctl">
+    <button data-m="morning">Morning</button><button data-m="noon">Noon</button><button data-m="evening">5 pm</button><button data-m="weekend">Thu/Fri night</button>
+  </div>
+  <div class="phone">
+    <div class="status"><span id="clock">9:12</span><span>●●● 5G</span></div>
+    <div class="screen" id="screen"></div>
+    <div class="nav"><span class="on">Home</span><span>Search</span><span>Pay</span><span>Rewards</span><span>Profile</span></div>
+  </div>
+  <div class="notif"><div class="lbl"><b>Push notification</b><span id="nsend"></span></div><div class="push" id="push"><div class="ic">V</div><div class="tx"><div class="hd"><span>vibe</span><span id="ntime"></span></div><div class="t" id="ntitle"></div><div class="bd" id="nbody"></div></div></div></div>
+</div>
+<div class="toast" id="toast"></div></div>
+<div id="tabB" class="tabpane"><div class="stage">
+  <div class="seg" id="mseg"><button data-m="credit" class="on">Credit</button><button data-m="drinks">Drinks</button><button data-m="fee">Fee-only</button></div>
+  <div class="phone"><div class="scr" id="phone"></div></div>
+</div></div>
+<script>
+(function(){
+const G=(a,b)=>`background:linear-gradient(135deg,${a},${b})`;
+const M={
+ morning:{clock:"8:47",day:"Tuesday",greet:"Good morning",head:"Coffee before your 9:30?",why:"Because it's <b>8:47 am on a weekday</b> and you're near <b>Midtown</b>",
+  hero:{n:"Lantern Coffee House",m:"<b>4.8</b> · Coffee and pastries · 3 min walk",tag:"Trending this week",g:G("#7C4A1E","#D9A066")},
+  lists:[{t:"Quick coffee on the way",items:[["Bluebird Espresso","2 min · 4.7",G("#3B2A1A","#A0703C")],["Ferment Cafe","5 min · 4.6",G("#4B3621","#C89B6D")],["North Pour","6 min · 4.8",G("#2E1F14","#8B5E34")]]},
+   {t:"Brunch worth the wait",items:[["Sunny Side Kitchen","Opens 9 · 4.7",G("#B45309","#FCD34D")],["Marigold Table","10 min · 4.6",G("#9A3412","#FDBA74")],["The Egg Room","12 min · 4.5",G("#A16207","#FDE68A")]]}]},
+ noon:{clock:"12:04",day:"Wednesday",greet:"Lunch time",head:"Good lunch, close to work",why:"Because it's <b>noon on a weekday</b> and you're near <b>your office</b>",
+  hero:{n:"Kiko Rice Bar",m:"<b>4.7</b> · Japanese bowls · 4 min walk · in and out in 30 min",tag:"Office favorite",g:G("#14532D","#86EFAC")},
+  lists:[{t:"In and out in 30 minutes",items:[["Green Fork Salads","3 min · 4.6",G("#166534","#4ADE80")],["Pho Number 9","5 min · 4.7",G("#7C2D12","#FB923C")],["Taqueria Luz","6 min · 4.8",G("#991B1B","#FCA5A5")]]},
+   {t:"Worth a longer lunch",items:[["Olive and Thyme","8 min · 4.7",G("#365314","#BEF264")],["Saffron House","10 min · 4.6",G("#9A3412","#FDBA74")],["Harbor Grill","12 min · 4.5",G("#1E3A8A","#93C5FD")]]}]},
+ evening:{clock:"5:08",day:"Tuesday",greet:"Plans tonight?",head:"After work, where to?",why:"Because it's <b>5 pm on a weekday</b>. Pick the kind of night",
+  hero:{n:"Velvet Hour",m:"<b>4.8</b> · Cocktail bar · happy hour until 7 · 8 min",tag:"After-work drinks",g:G("#4C1D95","#C4B5FD")},
+  lists:[{t:"Date night",items:[["Candela","Tables at 7:30 · 4.9",G("#7F1D1D","#F87171")],["Little Vine","Wine bar · 4.7",G("#581C87","#D8B4FE")],["Ember and Oak","Tables at 8 · 4.8",G("#78350F","#F59E0B")]]},
+   {t:"Dinner with a group",items:[["Long Table BBQ","Seats 8 · 4.7",G("#7C2D12","#FDBA74")],["Seoul Grill","Seats 10 · 4.6",G("#991B1B","#FCA5A5")],["Casa Verde","Seats 12 · 4.5",G("#14532D","#86EFAC")]]},
+   {t:"Drinks after work",items:[["Copper Tap","3 min · 4.6",G("#713F12","#FACC15")],["Rooftop 41","Views · 4.7",G("#1E3A8A","#93C5FD")]]}]},
+ weekend:{clock:"7:32",day:"Friday",greet:"It's Friday",head:"Dinner, then make a night of it",why:"Because it's <b>Friday evening</b>. Dinner and social plans together",
+  hero:{n:"The Rook and Pawn",m:"<b>4.8</b> · Board-game bar with small plates · 10 min",tag:"Game night",g:G("#1E3A8A","#A5B4FC")},
+  lists:[{t:"Game nights and social spots",items:[["Pinball Social","Games and burgers · 4.6",G("#831843","#F9A8D4")],["Trivia at Fable","Starts 8 · 4.7",G("#134E4A","#5EEAD4")],["Lucky Lanes","Bowling and bar · 4.5",G("#4C1D95","#C4B5FD")]]},
+   {t:"Big night out dinners",items:[["Candela","Tables at 9 · 4.9",G("#7F1D1D","#F87171")],["Saffron House","Late kitchen · 4.6",G("#9A3412","#FDBA74")],["Seoul Grill","Groups · 4.6",G("#991B1B","#FCA5A5")]]},
+   {t:"Late drinks nearby",items:[["Velvet Hour","Open till 2 · 4.8",G("#4C1D95","#C4B5FD")],["Copper Tap","Live music · 4.6",G("#713F12","#FACC15")]]}]}
+};
+const screen=document.getElementById('screen'),clock=document.getElementById('clock');
+const toast=t=>{const e=document.getElementById('toast');e.textContent=t;e.classList.add('show');clearTimeout(e._t);e._t=setTimeout(()=>e.classList.remove('show'),2200)};
+function renderMap(){
+ clock.textContent="7:32";
+ let pins="";const pts=[[60,180],[120,230],[200,160],[260,260],[90,320],[170,300],[240,380],[70,430],[150,460],[280,470],[210,520],[110,560],[300,200],[40,260],[230,610],[130,640]];
+ pts.forEach(([x,y])=>pins+=`<circle cx="${x}" cy="${y}" r="7" fill="#FFBA00" stroke="#09090B" stroke-width="2"/>`);
+ screen.innerHTML=`<div class="mapview"><svg viewBox="0 0 340 680" preserveAspectRatio="xMidYMid slice">
+ <g stroke="#26262B" stroke-width="10" fill="none"><path d="M0 120 L340 200"/><path d="M0 400 L340 340"/><path d="M90 0 L140 680"/><path d="M250 0 L210 680"/><path d="M0 560 L340 600"/></g>
+ <g stroke="#1E1E22" stroke-width="4"><path d="M0 280 L340 260"/><path d="M40 0 L60 680"/><path d="M300 0 L320 680"/><path d="M0 480 L340 500"/></g>${pins}</svg>
+ <div class="mapsearch">Search restaurants</div>
+ <div class="timer">Every pin looks the same. The diner zooms, taps a few, and if nothing catches their eye in <b>30 to 60 seconds</b>, they close the app.</div></div>`;
+}
+const N={
+ morning:{send:"Sent 8:40 am, weekdays",time:"8:40 AM",t:"Coffee 3 minutes away",b:"Lantern Coffee House is trending this week. Your $84 credit works there.",w:"<b>One place, close by, before the commute.</b> Tapping opens the morning screen with coffee and brunch."},
+ noon:{send:"Sent 11:40 am, weekdays",time:"11:40 AM",t:"Lunch near the office?",b:"Kiko Rice Bar, 4 min walk. In and out in 30 minutes, rated 4.7.",w:"<b>Sent before people pick lunch, not after.</b> Tapping opens the noon screen with quick and longer lunch lists."},
+ evening:{send:"Sent 4:30 pm, Mon to Wed",time:"4:30 PM",t:"Plans after work?",b:"Happy hour at Velvet Hour until 7. Or book a table for date night.",w:"<b>Early enough to make a plan.</b> Tapping opens the 5 pm screen: date night, groups and drinks."},
+ weekend:{send:"Sent Thursday 3 pm",time:"Thu 3:00 PM",t:"Make Friday a game night",b:"The Rook and Pawn has tables for groups. Dinner first? Candela has 9 pm seats.",w:"<b>A day ahead, so friends can plan together.</b> Tapping opens the Thu/Fri screen with dinner and social spots."}
+};
+function renderNotif(k){const n=N[k];nsend.textContent=n.send;ntime.textContent=n.time;ntitle.textContent=n.t;nbody.textContent=n.b;push.dataset.k=k}
+push.addEventListener('click',()=>{const k=push.dataset.k==='map'?'map':push.dataset.k;render(k);toast('Opens the app on this screen')});
+const saved=new Set();
+const H=n=>`<button class="heart${saved.has(n)?' on':''}" data-h="${n}" aria-label="Save ${n}"><svg viewBox="0 0 24 24"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 3 4.5 6.8 4.5c2.1 0 3.6 1.1 5.2 3 1.6-1.9 3.1-3 5.2-3 3.8 0 5.9 3.9 4.4 7.3C19.5 16.4 12 21 12 21z"/></svg></button>`;
+function render(k){
+ renderNotif(k);
+ document.querySelectorAll('#tabA [data-m]').forEach(b=>b.classList.toggle('on',b.dataset.m===k));
+ const d=M[k];clock.textContent=d.clock;
+ let h=`<div class="top"><div class="logo">vibe<i>.</i></div><div class="bal">Credit <b>$84</b></div></div>
+ <div class="headline" style="margin-bottom:14px">${d.head}</div>
+ <div class="hero" data-n="${d.hero.n}"><div class="img" style="${d.hero.g}"><span>${d.hero.tag}</span>${H(d.hero.n)}</div><div class="body"><h3>${d.hero.n}</h3><div class="meta">${d.hero.m}</div><span class="pill">Pay with credit</span></div></div>`;
+ d.lists.forEach(l=>{h+=`<div class="sec"><h3>${l.t}</h3><a href="#" data-l="${l.t}">See all</a></div><div class="row">`;
+  l.items.forEach(([n,m,g])=>h+=`<div class="card" data-n="${n}"><div class="img" style="${g}">${H(n)}</div><div class="b"><b>${n}</b><div class="meta">${m}</div></div></div>`);h+=`</div>`});
+ screen.innerHTML=h;screen.scrollTop=0;
+}
+screen.addEventListener('click',e=>{
+ const hb=e.target.closest('[data-h]');if(hb){const n=hb.dataset.h;if(saved.has(n)){saved.delete(n);hb.classList.remove('on');toast(`Removed ${n} from saved`)}else{saved.add(n);hb.classList.add('on');toast(`Saved ${n}. We'll use it to tune your lists`)}return}
+ const c=e.target.closest('[data-n]'),l=e.target.closest('[data-l]'),m=e.target.closest('[data-map]');
+ if(l){e.preventDefault();toast(`Opens the full "${l.dataset.l}" list`)}
+ else if(c)toast(`${c.dataset.n}: details, directions, pay with your credit`);
+ else if(m)render('map');
+});
+document.querySelectorAll('#tabA [data-m]').forEach(b=>b.addEventListener('click',()=>render(b.dataset.m)));
+render('evening');
+})();
+(function(){function phone(m){
+ let h=`<div class="status"><span>5:12</span><span>Austin</span></div><div class="kicker">MEMBERSHIP</div>`;
+ const perks=l=>`<div class="perks"><h4>Every membership includes</h4><ul>${l.map(x=>`<li>${x}</li>`).join("")}</ul></div>`;
+ if(m==="credit"||m==="all"){h+=`<h2 class="ph1">More to spend at the places you love</h2><p class="psub">Pay once a month, get more in credit. $1 of credit always buys $1 of food at any partner.</p>`;
+  [["Casual",49,65],["Regular",79,110],["Foodie",149,210]].forEach((p,i)=>{h+=`<div class="plan ${i===1?"on":""}"><div class="row1"><b>${p[0]}</b><span class="price">$${p[1]}<small>/mo</small></span></div><p>$${p[2]} in credit every month${i===1?" · recommended":""}</p></div>`;});
+  h+=perks(["Unused credit rolls over for 2 months","Earned rewards never expire","Members' tables on quieter nights"]);}
+ if(m==="drinks"){h+=`<h2 class="ph1">Drinks on us, every month</h2><p class="psub">Up to 2 drinks per visit, so you can bring a friend, at partner bars, restaurants and cafés.</p>`;
+  h+=`<div class="plan on"><div class="row1"><b>Cocktail and wine</b><span class="price">$49<small>/mo</small></span></div><p>4 drinks a month, up to $18 each</p><div class="icons">${"<span>&#127864;</span>".repeat(4)}</div></div>`;
+  h+=`<div class="plan"><div class="row1"><b>Coffee</b><span class="price">$35<small>/mo</small></span></div><p>8 coffees a month, up to $7 each</p><div class="icons">${"<span>&#9749;</span>".repeat(8)}</div></div>`;
+  h+=perks(["Honored at times partners choose","Pay any difference above the cap by card","Add food and earn your usual reward"]);}
+ if(m==="fee"){h+=`<h2 class="ph1">Better rewards, no expiry</h2><p class="psub">A small monthly fee for a steady higher reward.</p>`;
+  h+=`<div class="plan on"><div class="row1"><b>Member</b><span class="price">$9.99<small>/mo</small></span></div><p>+5 points on every visit · earned rewards never expire</p></div>`;
+  h+=perks(["Members' tables on quieter nights","Priority access to partner-hosted dinners","Personal picks each week"]);}
+ h+=`<button class="cta" onclick="this.textContent='Welcome, member'">Become a member</button><p class="fine">Cancel anytime. Concept only.</p>`;
+ document.getElementById("phone").innerHTML=h;
+}
+document.querySelectorAll("#mseg button").forEach(b=>b.addEventListener("click",()=>{document.querySelectorAll("#mseg button").forEach(x=>x.classList.toggle("on",x===b));phone(b.dataset.m);}));
+phone("credit");})();
+(function(){const tabs=document.querySelectorAll('.tabs button');
+function show(t){tabs.forEach(x=>x.classList.toggle('on',x.dataset.t===t));document.querySelectorAll('.tabpane').forEach(p=>p.classList.toggle('on',p.id===t));window.scrollTo(0,0)}
+tabs.forEach(x=>x.addEventListener('click',()=>show(x.dataset.t)));})();
+</script>
+</body>
+</html>
